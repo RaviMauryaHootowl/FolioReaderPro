@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.*
 import android.webkit.JavascriptInterface
+import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
@@ -44,14 +45,15 @@ class WebViewPager : ViewPager {
 
         addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                // Log.d(LOG_TAG, "-> onPageScrolled -> position = " + position +
-                // ", positionOffset = " + positionOffset + ", positionOffsetPixels = " + positionOffsetPixels);
+
+                 Log.d(LOG_TAG, "-> onPageScrolled -> position = " + position +
+                 ", positionOffset = " + positionOffset + ", positionOffsetPixels = " + positionOffsetPixels);
 
                 isScrolling = true
 
                 if (takeOverScrolling && folioWebView != null) {
                     val scrollX = folioWebView!!.getScrollXPixelsForPage(position) + positionOffsetPixels
-                    //Log.d(LOG_TAG, "-> onPageScrolled -> scrollX = " + scrollX);
+                    Log.d(LOG_TAG, "-> onPageScrolled -> scrollX = " + scrollX);
                     folioWebView!!.scrollTo(scrollX, 0)
                 }
 

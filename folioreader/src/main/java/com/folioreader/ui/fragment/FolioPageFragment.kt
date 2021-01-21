@@ -19,6 +19,7 @@ import android.view.animation.AnimationUtils
 import android.webkit.*
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
@@ -165,6 +166,7 @@ class FolioPageFragment : Fragment(),
         mRootView = inflater.inflate(R.layout.folio_page_fragment, container, false)
         mPagesLeftTextView = mRootView!!.findViewById<View>(R.id.pagesLeft) as TextView
         mMinutesLeftTextView = mRootView!!.findViewById<View>(R.id.minutesLeft) as TextView
+
 
         mConfig = AppUtil.getSavedConfig(context)
 
@@ -362,8 +364,9 @@ class FolioPageFragment : Fragment(),
 
         setupScrollBar()
         mWebview!!.addOnLayoutChangeListener { view, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
-            val height = Math.floor((mWebview!!.contentHeight * mWebview!!.scale).toDouble()).toInt()
+            val height = Math.floor((mWebview!!.contentHeight * mWebview!!.resources.displayMetrics.density).toDouble()).toInt()
             val webViewHeight = mWebview!!.measuredHeight
+            //Toast.makeText(activity, height.toString(), Toast.LENGTH_LONG).show()
             mScrollSeekbar!!.maximum = height - webViewHeight
         }
 
@@ -381,7 +384,7 @@ class FolioPageFragment : Fragment(),
 
         mWebview!!.setScrollListener(object : FolioWebView.ScrollListener {
             override fun onScrollChange(percent: Int) {
-
+                //Toast.makeText(activity, percent.toString(), Toast.LENGTH_LONG).show()
                 mScrollSeekbar!!.setProgressAndThumb(percent)
                 updatePagesLeftText(percent)
             }

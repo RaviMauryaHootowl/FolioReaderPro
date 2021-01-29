@@ -22,6 +22,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
@@ -265,6 +266,8 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         setContentView(R.layout.folio_activity)
         this.savedInstanceState = savedInstanceState
 
+        //requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
         if (savedInstanceState != null) {
             searchAdapterDataBundle = savedInstanceState.getBundle(SearchAdapter.DATA_BUNDLE)
             searchQuery = savedInstanceState.getCharSequence(SearchActivity.BUNDLE_SAVE_SEARCH_QUERY)
@@ -365,6 +368,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemSearch).icon)
         UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemConfig).icon)
         UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemTts).icon)
+        UiUtil.setColorIntToDrawable(config.themeColor, menu.findItem(R.id.itemRotate).icon)
 
         if (!config.isShowTts)
             menu.findItem(R.id.itemTts).isVisible = false
@@ -404,6 +408,10 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
             showMediaController()
             return true
         }
+//        else if(itemId == R.id.itemRotate) {
+////            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+////            return true
+//        }
 
         return super.onOptionsItemSelected(item)
     }

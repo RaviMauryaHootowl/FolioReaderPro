@@ -19,6 +19,15 @@
         tools:showAsAction="always" />
 
     <item
+        android:id="@+id/itemRotate"
+        android:icon="@drawable/ic_screen_rotation_black_24dp"
+        android:iconTint="#DF6F06"
+        android:visible="false"
+        android:title="@string/menu_item_config"
+        app:showAsAction="ifRoom"
+        tools:showAsAction="always" />
+
+    <item
         android:id="@+id/itemTts"
         android:icon="@drawable/man_speech_icon"
         android:title="@string/menu_item_tts"

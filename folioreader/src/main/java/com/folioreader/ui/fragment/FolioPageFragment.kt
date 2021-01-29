@@ -384,7 +384,6 @@ class FolioPageFragment : Fragment(),
 
         mWebview!!.setScrollListener(object : FolioWebView.ScrollListener {
             override fun onScrollChange(percent: Int) {
-                //Toast.makeText(activity, percent.toString(), Toast.LENGTH_LONG).show()
                 mScrollSeekbar!!.setProgressAndThumb(percent)
                 updatePagesLeftText(percent)
             }
@@ -395,6 +394,7 @@ class FolioPageFragment : Fragment(),
 
         mWebview!!.settings.defaultTextEncodingName = "utf-8"
         HtmlTask(this).execute(chapterUrl.toString())
+
     }
 
     private val webViewClient = object : WebViewClient() {
@@ -670,6 +670,7 @@ class FolioPageFragment : Fragment(),
         try {
             val currentPage = (Math.ceil(scrollY.toDouble() / mWebview!!.webViewHeight) + 1).toInt()
             val totalPages = Math.ceil(mWebview!!.contentHeightVal.toDouble() / mWebview!!.webViewHeight).toInt()
+
             val pagesRemaining = totalPages - currentPage
             val pagesRemainingStrFormat = if (pagesRemaining > 1)
                 getString(R.string.pages_left)

@@ -196,7 +196,7 @@ html .highlight_yellow, html .highlight_green, html .highlight_blue, html .highl
  */
 
 html {
-    background-color: #FFFFFF !important;
+    background-color: #EEEEEE !important;
 }
 
 body {
@@ -216,11 +216,13 @@ html.nightMode {
     color: #BBBBBB !important;
 }
 
-html.nightMode .highlight_yellow {background:rgba(255, 235, 107, 0.9)}
-html.nightMode .highlight_green {background:rgba(192, 237, 114, 0.9)}
-html.nightMode .highlight_blue {background:rgba(173, 216, 255, 0.9)}
-html.nightMode .highlight_pink {background:rgba(255, 176, 202, 0.9)}
-html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 0.6)}
+.nightMode a { color:#427ef5; }
+
+html.nightMode .highlight_yellow {background:rgba(255, 235, 107, 0.6); color:rgba(0, 0, 0, 1);}
+html.nightMode .highlight_green {background:rgba(192, 237, 114, 0.6); color:rgba(0, 0, 0, 1);}
+html.nightMode .highlight_blue {background:rgba(173, 216, 255, 0.6); color:rgba(0, 0, 0, 1);}
+html.nightMode .highlight_pink {background:rgba(255, 176, 202, 0.6); color:rgba(0, 0, 0, 1);}
+html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 0.8)}
 
 
 /*
@@ -262,12 +264,12 @@ html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 
      font-family: "raleway", sans-serif;
  }
 
-html.textSizeOne { font-size: 13px !important; }
-html.textSizeTwo { font-size: 15px !important; }
-html.textSizeThree { font-size: 17px !important; }
-html.textSizeFour { font-size: 19px !important; }
-html.textSizeFive { font-size: 21px !important; }
-html.textSizeSix { font-size: 23px !important; }
+html.textSizeOne * { font-size: 13px !important; }
+html.textSizeTwo * { font-size: 15px !important; }
+html.textSizeThree * { font-size: 17px !important; }
+html.textSizeFour * { font-size: 19px !important; }
+html.textSizeFive * { font-size: 21px !important; }
+html.textSizeSix * { font-size: 23px !important; }
 
 h1 {
     font-size: 2rem;

@@ -31,10 +31,14 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* ePUB */
-html {
+html * {
     -webkit-text-size-adjust: none; /* Never autoresize text */
     margin: 0 !important;
     padding: 0 0 !important;
+    hyphens: none;
+    /*text-align: left;
+    text-justify: inter-word;
+    text-align-last: justify;*/
 }
 
 body {

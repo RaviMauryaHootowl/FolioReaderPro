@@ -49,7 +49,7 @@ public class DirectionalViewpager extends ViewGroup {
     private static final int MAX_SETTLE_DURATION = 600; // ms
     private static final int MIN_DISTANCE_FOR_FLING = 25; // dips
 
-    private static final int DEFAULT_GUTTER_SIZE = 16; // dips
+    private static final int DEFAULT_GUTTER_SIZE = 0; // dips
 
     private static final int MIN_FLING_VELOCITY = 400; // dips
 
@@ -1241,7 +1241,7 @@ public class DirectionalViewpager extends ViewGroup {
                             mItems.remove(itemIndex);
                             mAdapter.destroyItem(this, pos, ii.object);
                             if (DEBUG) {
-                                Log.i(TAG, logDestroyItem(pos, ((View) ii.object)));
+                                //Log.i(TAG, logDestroyItem(pos, ((View) ii.object)));
                             }
                             itemIndex--;
                             curIndex--;
@@ -1274,7 +1274,7 @@ public class DirectionalViewpager extends ViewGroup {
                                 mItems.remove(itemIndex);
                                 mAdapter.destroyItem(this, pos, ii.object);
                                 if (DEBUG) {
-                                    Log.i(TAG, logDestroyItem(pos, ((View) ii.object)));
+//                                    Log.i(TAG, logDestroyItem(pos, ((View) ii.object)));
                                 }
                                 ii = itemIndex < mItems.size() ? mItems.get(itemIndex) : null;
                             }
